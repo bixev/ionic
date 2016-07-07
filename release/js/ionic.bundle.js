@@ -753,7 +753,7 @@ window.ionic.version = '1.2.4';
         options || {});
 
     // add some css to the element to prevent the browser from doing its native behavoir
-    if(this.options.stop_browser_behavior) {
+    if(this.options.stop_browser_behavior && window.navigator.userAgent.match(ionic.Gestures.MOBILE_REGEX)) {
       ionic.Gestures.utils.stopDefaultBrowserBehavior(this.element, this.options.stop_browser_behavior);
     }
 
