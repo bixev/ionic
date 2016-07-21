@@ -755,14 +755,14 @@ window.ionic.version = '1.2.4';
     // add some css to the element to prevent the browser from doing its native behavoir
     if(this.options.stop_browser_behavior && window.navigator.userAgent.match(ionic.Gestures.MOBILE_REGEX)) {
       ionic.Gestures.utils.stopDefaultBrowserBehavior(this.element, this.options.stop_browser_behavior);
-    }
 
-    // start detection on touchstart
-    ionic.Gestures.event.onTouch(element, ionic.Gestures.EVENT_START, function(ev) {
-      if(self.enabled) {
-        ionic.Gestures.detection.startDetect(self, ev);
-      }
-    });
+      // start detection on touchstart
+      ionic.Gestures.event.onTouch(element, ionic.Gestures.EVENT_START, function(ev) {
+        if(self.enabled) {
+          ionic.Gestures.detection.startDetect(self, ev);
+        }
+      });
+    }
 
     // return instance
     return this;
